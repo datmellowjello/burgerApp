@@ -1,0 +1,54 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="container d-flex align-items-center">
+      <h1 class="display-1 mr-5">EAT - DA - BURGER</h1>
+
+      {{!-- <img src="/images/Hamburger-PNG-Picture.png" alt="BURGER" style="width:200px"> --}}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <ul class="list-group col-4 float-left p-2">
+      <li class="list-group-item list-group-item-danger text-center">
+        <h3>HOT N READY</h3>
+      </li>
+      {{#each burgers}}
+      {{#unless devoured}}
+      <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
+        <div><strong>{{id}}.</strong> {{name}}</div>
+        <button type="submit" class="btn btn-danger eat" name="id" data-id="{{id}}"><strong>DEVOUR</strong></button>
+      </li>
+      {{/unless}}
+      {{/each}}
+    </ul>
+
+    
+      <form action="" method="post" class='container col-4' id="newBurger">
+        <div class="form-group text-center mb-0">
+          <label>BURGER LAB</label><br/>
+          <input type="text" class="form-control" name="name" aria-describedby="helpId"
+            placeholder="NEW BURGER NAME"><br/>
+        </div>
+        <div class="form-group d-flex justify-content-center">
+        <button type="button" class="btn btn-success btn-lg" id="newBurgerBtn">Launch</button></div>
+      </form>
+  
+
+    <ul class="list-group col-4 float-right p-2">
+      <li class="list-group-item list-group-item-info text-center">
+        <h3>DEVOURED</h3>
+      </li>
+      {{#each burgers}}
+      {{#if devoured}}
+      <li class="list-group-item list-group-item-light d-flex justify-content-between align-items-center">
+        <div><strong>{{id}}.</strong> {{name}}</div>
+        <button type="button" class="btn btn-success make"  data-id="{{id}}"><strong>MAKE IT AGAIN</strong></button>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+
+  </div>
+</div>
