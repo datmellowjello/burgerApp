@@ -12,13 +12,13 @@
   <div class="row">
     <ul class="list-group col-4 float-left p-2">
       <li class="list-group-item list-group-item-danger text-center">
-        <h3>HOT N READY</h3>
+        <h3>Ready to EAT!</h3>
       </li>
       {{#each burgers}}
       {{#unless devoured}}
       <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
         <div><strong>{{id}}.</strong> {{name}}</div>
-        <button type="submit" class="btn btn-danger eat" name="id" data-id="{{id}}"><strong>DEVOUR</strong></button>
+        <button type="submit" class="btn btn-danger eat" name="id" data-id="{{id}}"><strong>DEVOUR!</strong></button>
       </li>
       {{/unless}}
       {{/each}}
